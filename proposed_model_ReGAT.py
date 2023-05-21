@@ -99,7 +99,6 @@ def get_gt_scene_graph_encoding_layer(num_node_features, num_edge_features):
             return self.node_mlp_2(out)
 
     op = torch_geometric.nn.MetaLayer(EdgeModel(), NodeModel())
-    return opnn.MetaLayer(EdgeModel(), NodeModel())
     return op
 
 
