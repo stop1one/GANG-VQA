@@ -45,6 +45,9 @@ import torch.backends.cudnn as cudnn
 import pathlib
 import util.misc as utils
 
+import gc
+gc.collect()
+
 from gqa_dataset_entry import GQATorchDataset, GQATorchDataset_collate_fn
 from pipeline_model_gat import PipelineModel # use gat model
 import json
@@ -111,7 +114,7 @@ def get_args_parser():
     #                         'fastest way to use PyTorch for either single node or '
     #                         'multi node data parallel training')
 
-    parser.add_argument('--output_dir', default='./outputdir',
+    parser.add_argument('--output_dir', default='/GraphVQA/outputdir',
                         help='path where to save, empty for no saving')
 
     # distributed training parameters
@@ -415,7 +418,7 @@ def train(train_loader, model, criterion, optimizer, epoch, args):
     model.train()
 
     end = time.time()
-    for i, (data_batch) in enumerate(train_loader):
+    for i, (data_batch) in enumerate(train_loader): # tqdm(enumerate(train_loader), desc=f'Training epoch {epoch+1}', leave=True):
         # measure data loading time
         data_time.update(time.time() - end)
 

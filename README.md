@@ -1,3 +1,6 @@
+# DATA302 Project
+This repository is about DATA302 Project based on GraphVQA
+
 # GraphVQA: Language-Guided Graph Neural Networks for Scene Graph Question Answering
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/graghvqa-language-guided-graph-neural/graph-question-answering-on-gqa)](https://paperswithcode.com/sota/graph-question-answering-on-gqa?p=graghvqa-language-guided-graph-neural)

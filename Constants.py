@@ -10,7 +10,7 @@ import numpy as np
 
 
 # directory constants
-ROOT_DIR = pathlib.Path('/home/weixin/neuralPoolTest/')
+ROOT_DIR = pathlib.Path('/Users/jiwon/Documents/University/DATA302')
 
 #  specials = list(OrderedDict.fromkeys(
             # tok for tok in [self.unk_token, self.pad_token, self.init_token,

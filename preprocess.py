@@ -19,6 +19,9 @@ import numpy as np
 import random
 import argparse
 
+import nltk
+nltk.download('wordnet')
+
 
 ROOT_DIR = Constants.ROOT_DIR
 # PACKAGE_DIR = ROOT_DIR / 'DialogGQA'
@@ -27,7 +30,6 @@ ROOT_DIR = Constants.ROOT_DIR
 # sys.path.insert(0, str(GQA_DETR_OD_DIR))
 
 lemmatizer = WordNetLemmatizer()
-
 
 def get_args_parser():
     parser = argparse.ArgumentParser('Explainable GQA Parser', add_help=False)
@@ -604,7 +606,8 @@ if True:
     
     with open(ROOT_DIR / 'GraphVQA/questions/original/testdev_balanced_questions.json') as f:
         # total 12578 programs
-        raw_dev_data = json.load(f)
+        random.seed(302)
+        raw_dev_data = dict(random.sample(list(json.load(f).items()), 1000))
     preprocess(raw_dev_data, ROOT_DIR / 'GraphVQA/questions/testdev_balanced_programs.json')
 
     # from gqa_dataset.visual_genome import VG
@@ -628,7 +631,8 @@ if True:
     # val_programs_path = ROOT_DIR / 'GraphVQA/questions/val_balanced_masked_programs.json'
     with open(val_questions_path) as f:
         # total 132062 programs
-        raw_data = json.load(f)
+        random.seed(302)
+        raw_data = dict(random.sample(list(json.load(f).items()), 8000))
     # actual: 131548, discard 514 (0.3%)
     preprocess(raw_data, val_programs_path, dataset_this, sg_data)
 
@@ -661,7 +665,8 @@ if True:
     # train_programs_path = ROOT_DIR / 'GraphVQA/questions/train_balanced_masked_programs.json'
     with open(train_questions_path) as f:
         # total 943000 programs
-        raw_data = json.load(f)
+        random.seed(302)
+        raw_data = dict(random.sample(list(json.load(f).items()), 32000))
 
     # only 939806, discard 3194 (0.3%)
     preprocess(raw_data, train_programs_path, dataset_this, sg_data)
@@ -691,7 +696,8 @@ if True:
         # val_programs_path = ROOT_DIR / 'explainableGQA/questions/val_balanced_masked_programs.json'
         with open(val_questions_path) as f:
             # total 132062 programs
-            raw_data = json.load(f)
+            random.seed(302)
+            raw_data = dict(random.sample(list(json.load(f).items()), 8000))
         # actual: 131548, discard 514 (0.3%)
         # print(raw_data)
         preprocess(raw_data, val_programs_path, dataset_this, sg_data)

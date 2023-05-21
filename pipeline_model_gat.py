@@ -14,6 +14,7 @@ from gqa_dataset_entry import GQATorchDataset
 from graph_utils import my_graph_layernorm
 
 from gat_skip import gat_seq # use second version of gat
+
 """
 Graph Meta Layer, Example funciton
 """
@@ -98,6 +99,7 @@ def get_gt_scene_graph_encoding_layer(num_node_features, num_edge_features):
             return self.node_mlp_2(out)
 
     op = torch_geometric.nn.MetaLayer(EdgeModel(), NodeModel())
+    return opnn.MetaLayer(EdgeModel(), NodeModel())
     return op
 
 

@@ -67,15 +67,16 @@ import os.path
 import glob
 import json
 import math
+import random
 
 ##### Arguments
 ##########################################################################################
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--tier',           default = "val",                     type = str,    help = "Tier, e.g. train, val")
-parser.add_argument('--scenes',         default="./sceneGraphs/{tier}_sceneGraphs.json",   type = str,    help = "Scene graphs file name format.")
-parser.add_argument('--questions',      default="./questions/original/{tier}_all_questions.json", type = str,    help = "Questions file name format.")
-parser.add_argument('--choices',        default="{tier}_choices.json",       type = str,    help = "Choices file name format.")
+parser.add_argument('--scenes',         default="/Users/jiwon/Documents/University/DATA302/GraphVQA/sceneGraphs/{tier}_sceneGraphs.json",   type = str,    help = "Scene graphs file name format.")
+parser.add_argument('--questions',      default="/Users/jiwon/Documents/University/DATA302/GraphVQA/questions/original/{tier}_all_questions.json", type = str,    help = "Questions file name format.")
+parser.add_argument('--choices',        default="/Users/jiwon/Documents/University/DATA302/GraphVQA/{tier}_choices.json",       type = str,    help = "Choices file name format.")
 parser.add_argument('--predictions',    default="{tier}_predictions.json",   type = str,    help = "Answers file name format.")
 parser.add_argument('--attentions',     default="{tier}_attentions.json",    type = str,    help = "Attentions file name format.")
 parser.add_argument('--consistency',    action="store_true",        help = "True to compute consistency score (Need to provide answers to questions in val_all_questions.json).")
@@ -104,6 +105,7 @@ def loadFile(name):
     if os.path.isfile(name):
         with open(name) as file:
             data = json.load(file)
+            
     # load file chunks if too big 
     elif os.path.isdir(name.split(".")[0]):
         data = {}

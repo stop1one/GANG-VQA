@@ -15,7 +15,6 @@ import numpy as np
 import torch_geometric
 import torchtext
 
-
 # ROOT_DIR = pathlib.Path('/home/weixin/neuralPoolTest/')
 # SCENEGRAPHS = pathlib.Path('/data/weixin/GQA/sceneGraphs/')  # SCENEGRAPHS = ROOT_DIR / 'Downloads' / 'sceneGraphs'
 # EXPLAINABLE_GQA_DIR = pathlib.Path('/home/weixin/neuralPoolTest/GraphVQA')

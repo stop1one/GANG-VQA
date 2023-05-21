@@ -1,3 +1,4 @@
+.DS_Store
 __pycache__/
 # meta_info/
 .vector_cache/
@@ -9,3 +10,6 @@ sceneGraphs/
 *.log
 *.pth
 *.h5
+*.whl
+*.tar.gz
+val_choices.json
