@@ -708,6 +708,11 @@ if __name__ == '__main__':
     #     collate_fn=GQATorchDataset_collate_fn
     # )
 
+    # with open('TEXT_vocab.txt', 'w', encoding='UTF-8') as fw:
+    #     for k, v in GQA_gt_sg_feature_lookup.SG_ENCODING_TEXT.vocab.stoi.items():
+    #         fw.write(f'{k} : {v}\n')
+    # print('dump success!')
+
     for data_batch in data_loader:
         questionID, questions, gt_scene_graphs, programs, full_answers, short_answer_label, types = data_batch
         print("gt_scene_graphs", gt_scene_graphs)
