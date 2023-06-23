@@ -683,6 +683,8 @@ if __name__ == '__main__':
     dataset = GQATorchDataset(split, build_vocab_flag=False, load_vocab_flag=True)
     # dataset[0]
 
+    
+
     ##################################
     # Make sure the matcher results are correct
     # Double check the warning
@@ -708,18 +710,20 @@ if __name__ == '__main__':
     #     collate_fn=GQATorchDataset_collate_fn
     # )
 
-    # with open('TEXT_vocab.txt', 'w', encoding='UTF-8') as fw:
-    #     for k, v in GQA_gt_sg_feature_lookup.SG_ENCODING_TEXT.vocab.stoi.items():
-    #         fw.write(f'{k} : {v}\n')
+    # with open('TEXT_vocab.txt', 'w+') as f:
+    #     for token, index in GQATorchDataset.TEXT.vocab.stoi.items():
+    #         f.write(f'{index}: {token}\n')
     # print('dump success!')
 
     for data_batch in data_loader:
         questionID, questions, gt_scene_graphs, programs, full_answers, short_answer_label, types = data_batch
-        print("gt_scene_graphs", gt_scene_graphs)
-        print("gt_scene_graphs.x", gt_scene_graphs.x)
-        print("gt_scene_graphs.edge_attr", gt_scene_graphs.edge_attr )
-        print("gt_scene_graphs.y", gt_scene_graphs.y)
-        print("gt_scene_graphs.added_sym_edge", gt_scene_graphs.added_sym_edge)
+        # print("gt_scene_graphs", gt_scene_graphs)
+        # print("gt_scene_graphs.x", gt_scene_graphs.x)
+        # print("gt_scene_graphs.edge_attr", gt_scene_graphs.edge_attr )
+        # print("gt_scene_graphs.y", gt_scene_graphs.y)
+        # print("gt_scene_graphs.added_sym_edge", gt_scene_graphs.added_sym_edge)
+        print("questions", questions)
+        print("programs", programs)
         this_batch_size = questions.size(1)
         for batch_idx in range(min(this_batch_size, 128)):
             question = questions[:, batch_idx].cpu()
