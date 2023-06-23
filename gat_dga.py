@@ -370,9 +370,8 @@ class gat_seq(torch.nn.Module):
             # print(ins, ins[batch])
             guided_ins, use_flags = self.dga(questions, sg, batch)
             ins_node = torch.ones_like(guided_ins)
-            for j in range(len(use_flags)):
-                if use_flags: ins_node[j] = guided_ins[i][batch][j] # If possible, use guided instr vector
-                else: ins_node[j] = ins[batch][j] # pick correct batched instruction for each node
+            if use_flags: ins_node = guided_ins[i][batch] # If possible, use guided instr vector
+            else: ins_node = ins[batch] # pick correct batched instruction for each node
 
             x_cat = torch.cat((h, ins_node), dim=-1) # concat the previous layer node hidden rep with the instruction vector
 
