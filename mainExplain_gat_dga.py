@@ -49,7 +49,7 @@ import gc
 gc.collect()
 
 from gqa_dataset_entry import GQATorchDataset, GQATorchDataset_collate_fn
-from proposed_model import ProposedModel # use proposed model
+from proposed_model_dga import ProposedModel # use proposed model
 import json
 # GPU settings
 # assert torch.cuda.is_available()
