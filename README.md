@@ -4,7 +4,7 @@ This repository is about DATA302 (Introduction to computer vision its applicatio
 # GANG: Guided Attention Network in Graphs for VQA
 
 ## Abstract
-*Combining scene graph generation with visual question answering has been actively studied and is developing recently. There is a problem that the need for exploring many parts of scene graph reasoning limits more flexible reasoning. In this paper, we propose an approach to leverage a specific object in the question that corresponds image objects. We utilize this procedure by guiding attention and combining attention prior with attention score. And we propose a model that conducts this process, Guided Attention Network in Graphs (GANG). We show that this approach outperforms the baseline model (GraphVQA) and the performance of GANG is boosted by GAT-like encoding.*
+*Combining scene graph generation with visual question answering has been actively studied and developed recently. There is a problem that the need for exploring many parts of scene graph reasoning limits more flexible reasoning. In this paper, we propose an approach to leverage a specific object in the question that corresponds image objects. We utilize this procedure by guiding attention and combining attention prior with attention score. And we propose a model that conducts this process, Guided Attention Network in Graphs (GANG). We show that our approach outperforms the baseline model (GraphVQA) and the performance of GANG is boosted by GAT-like encoding.*
 
 ## Direct Guiding Answering (DGA)
 <p align="center">
