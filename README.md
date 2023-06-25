@@ -1,5 +1,5 @@
 # DATA302 Project
-This repository is about DATA302 Project based on GraphVQA
+This repository is about DATA302 (Introduction to computer vision its application, 기초컴퓨터비전이론및응용) Project based on GraphVQA paper
 
 # GANG: Guided Attention Network in Graphs for VQA
 
