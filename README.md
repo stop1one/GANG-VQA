@@ -1,6 +1,31 @@
 # DATA302 Project
 This repository is about DATA302 Project based on GraphVQA
 
+# GANG: Guided Attention Network in Graphs for VQA
+
+## Abstract
+*Combining scene graph generation with visual question answering has been actively studied and is developing recently. There is a problem that the need for exploring many parts of scene graph reasoning limits more flexible reasoning. In this paper, we propose an approach to leverage a specific object in the question that corresponds image objects. We utilize this procedure by guiding attention and combining attention prior with attention score. And we propose a model that conducts this process, Guided Attention Network in Graphs (GANG). We show that this approach outperforms the baseline model (GraphVQA) and the performance of GANG is boosted by GAT-like encoding.*
+
+## Direct Guiding Answering (DGA)
+<p align="center">
+  <img src="./figs/DGA_framework.png" width="1000" title="Structure of DGA framework" alt="">
+</p>
+
+
+## Guided Attention Network in Graphs (GANG)
+
+<p align="center">
+  <img src="./figs/GANG_framework.png" width="1000" title="Structure of GANG framework" alt="">
+</p>
+
+## Results
+<p align="center">
+  <img src="./figs/GANG_results.png" width="1000" title="Experiment Results" alt="">
+</p>
+ Since our model is tested with limited resources, that is, under the same conditions the results are recorded and compared with the two models. Of the entire GQA dataset, only 32000 questions were randomly extracted and trained. Random seeds were fixed to prevent randomness from affecting the final performance. All experiments were conducted based on 30 epochs.
+ Our final model **outperforms the baseline model and interim model (DGA) by a large margin** in the Accuracy metric!
+
+
 # GraphVQA: Language-Guided Graph Neural Networks for Scene Graph Question Answering
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/graghvqa-language-guided-graph-neural/graph-question-answering-on-gqa)](https://paperswithcode.com/sota/graph-question-answering-on-gqa?p=graghvqa-language-guided-graph-neural)
