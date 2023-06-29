@@ -22,6 +22,7 @@ This repository is about DATA302 (Introduction to computer vision its applicatio
 <p align="center">
   <img src="./figs/GANG_results.png" width="1000" title="Experiment Results" alt="">
 </p>
+
  Since our model is tested with limited resources, that is, under the same conditions the results are recorded and compared with the two models. Of the entire GQA dataset, only 32000 questions were randomly extracted and trained. Random seeds were fixed to prevent randomness from affecting the final performance. All experiments were conducted based on 30 epochs.
  Our final model **outperforms the baseline model and interim model (DGA) by a large margin** in the Accuracy metric!
 
